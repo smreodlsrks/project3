@@ -144,7 +144,7 @@
 		        		<li><a href="#">송파특색사업</a></li>
 		        		<li><a href="#">이용안내</a></li>
 		        		<li><a href="#">교육청상징</a></li>
-		        		<li><a href="./map.jsp">오시는길</a></li>
+		        		<li><a href="../Pages/map.jsp">오시는길</a></li>
 		        		<li><a href="#">비대면확인자격인증</a></li>
 		        	</ul>
 		        </li> 

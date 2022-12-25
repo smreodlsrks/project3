@@ -154,7 +154,7 @@
 </head>
 <body>
 	<img src="../Images/sign4-1.png" />
-	<img src="../Images/sign4-2.png" style="background-color:rgb(141, 180, 213);" />
+	<img src="../Images/sign4-2.png" style="background-color:rgb(141, 180, 213); position:absolute; top:43px; left:766px;" />
     <form name="myform" action="MembershipProcess.jsp" method="post" onsubmit="return formValidate(this);">
         <table class="userTable">
             <colgroup>

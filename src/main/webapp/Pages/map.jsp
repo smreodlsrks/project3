@@ -12,7 +12,7 @@
 </style>
 </head>
 <body>
-	<jsp:include page="./Top.jsp" />
+	<jsp:include page="../Main/Top.jsp" />
 	<div class="container">
 		<img src="../Images/map1.png"/>
 		<div id="map" style="width:1000px; height:350px; margin-left:30px; margin-bottom:15px;"></div>
@@ -49,6 +49,6 @@
 			</script>
 		<img src="../Images/map2.png" style="margin-left:20px;"/>
 	</div>
-	<jsp:include page="./Bottom.jsp" />
+	<jsp:include page="../Main/Bottom.jsp" />
 </body>
 </html>

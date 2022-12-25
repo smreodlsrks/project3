@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <html>
 <head><title>서울특별시교육청 > 로그인</title>
 <style>
@@ -37,9 +38,10 @@
 	<div>
 		<h2 style="margin-left:330px;">아이디 로그인</h2>
 		<form action="LoginProcess.jsp" method="post" name="loginfrm" onsubmit="return validateForm(this)" style="margin-left:150px;">
-			<input type="text" class="form-control pd-3" name="user_id" placeholder="아이디" style="padding:10px; width:406px; position:relative; left:50px; margin:10px;" /><br />
+			<input type="checkbox" name="cookie_id" style="margin-left:62px; margin-bottom:7px;" />아이디 저장<br />
+			<input type="text" id="cook" class="form-control pd-3" name="user_id" placeholder="아이디" style="padding:10px; width:406px; position:relative; left:50px; margin:10px;" /><br />
 			<input type="password" class="form-control pd-3" name="user_pw" placeholder="비밀번호" style="padding:10px; width:406px; position:relative; left:50px; margin:10px;" /><br />
-			<div style="height:20px; margin-top:8px; margin-left:112px; color:red; font-size:12px;">
+			<div style="height:20px; margin-top:8px; margin-left:62px; color:red; font-size:12px;">
 				<%= request.getAttribute("LoginErrMsg")==null ? "":request.getAttribute("LoginErrMsg") %>
 			</div>
 			<button type="submit" style="border:0; background-color:white; position:relative; left:44px; margin:10px; cursor:pointer;"><img src="../Images/login.png" /></button>
@@ -57,5 +59,27 @@
 		 신규가입 후 재직(재학)증명서를 서울시교육청 도서관·평생학습관에 제시하시면 <br />
 		  대출회원자격이 부여됩니다.</li>
 	</ul>
+	
+<%
+Cookie[] cookies = request.getCookies();
+boolean cookieExist = false;
+String cookieCheck = "";
+for(Cookie c : cookies) {
+    String cookieName = c.getName();   
+    String cookieValue = c.getValue();   
+    if (cookieName.equals("loginCookie")) {
+    	cookieExist = true;
+    	cookieCheck = c.getValue();
+    	break;
+    }
+}
+if(cookieExist == true){
+%>
+	<script>
+		document.getElementById("cook").value = "<%= cookieCheck %>";
+	</script>
+<%
+}
+%>	
 </body>
 </html>

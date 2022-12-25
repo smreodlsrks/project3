@@ -1,5 +1,21 @@
+
+<%@page import="utils.JSFunction"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+Cookie[] cookies = request.getCookies();
+boolean cookieExist = false;
+for(Cookie c : cookies) {
+    String cookieName = c.getName();        
+	    if (cookieName.equals("main")) {
+	    	cookieExist = true;
+	    	break;
+	    }
+}
+if(cookieExist == false){
+	JSFunction.cookiePage(out);
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>

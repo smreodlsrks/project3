@@ -28,7 +28,7 @@
 			<li>이용규정</li>
 			<li>이메일무단수집거부</li>
 			<li>전화번호안내</li>
-			<li><a href="./map.jsp">오시는길</a></li>
+			<li><a href="../Pages/map.jsp">오시는길</a></li>
 		</ul>
 		<script>
 			function moveout(select){

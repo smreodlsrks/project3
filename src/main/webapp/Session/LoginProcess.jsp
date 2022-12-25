@@ -5,6 +5,12 @@
 <%
 String userId = request.getParameter("user_id");
 String userPwd = request.getParameter("user_pw");
+String cookieId = request.getParameter("cookie_id");
+if(cookieId==null){}
+else if(cookieId.equals("on")){
+	Cookie cookie = new Cookie("loginCookie", userId);
+	response.addCookie(cookie);
+}
 
 MembershipDAO dao = new MembershipDAO(application);
 MembershipDTO memberDTO = dao.getMembershipDTO(userId, userPwd);
