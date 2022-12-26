@@ -27,7 +27,7 @@
 <body>
 	<div style="width:438px;">
 	<img src="../Images/공사안내문.png" style="cursor:pointer;" onclick="move()" /><br />
-	<input type="checkbox" id="cookie" style="float:left" onclick=makeCookie(this) />오늘하루 열지않음
+	<label style="cursor:pointer;"><input type="checkbox" id="cookie" style="float:left;" onclick=makeCookie(this) />오늘하루 열지않음</label>
 	<button type="button" onclick="self.close()" 
 		style="float:right; cursor:pointer; background-color:white; border:none;">X</button>
 	</div>

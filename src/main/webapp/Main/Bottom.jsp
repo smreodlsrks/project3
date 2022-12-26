@@ -15,10 +15,11 @@
 </style>
 </head>
 <body>
+	<!-- <hr style="margin-bottom:-14px;" />
 	<hr style="margin-bottom:-14px;" />
-	<hr style="margin-bottom:-14px;" />
-	<hr style="margin-bottom:-14px;" />
-	<hr />
+	<hr style="margin-bottom:-14px;" /> -->
+	<hr style="border-width:3px; color:rgb(10, 10, 10);"/>
+	
 	
 	<div class="container" style="margin-top:; margin-bottom:15px;">
 		<ul class="bttmul">

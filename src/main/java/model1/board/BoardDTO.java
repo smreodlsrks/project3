@@ -1,18 +1,21 @@
 package model1.board;
 
+import java.util.Date;
+
 public class BoardDTO {
-	//멤버변수 선언 : board테이블에 생성된 컬럼과 동일함.
 	private String num; 
 	private String title;
 	private String content;
 	private String id;
-	private java.sql.Date postdate; 
-	private String visitcount;
+	private String category;
+	private String ofile;
+	private String sfile;
+	private Date postdate; 
+	private int visitcount;
+	private int downloadcount;
 	//member테이블과의 join을 통해 회원 이름을 출력해야
 	//할 때를 위해 멤버변수 name을 추가한다.
 	private String name;
-	
-	//특별한 이유가 없다면 생성자는 없어도 된다.
 	
 	public String getNum() {
 		return num;
@@ -38,17 +41,41 @@ public class BoardDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public java.sql.Date getPostdate() {
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getOfile() {
+		return ofile;
+	}
+	public void setOfile(String ofile) {
+		this.ofile = ofile;
+	}
+	public String getSfile() {
+		return sfile;
+	}
+	public void setSfile(String sfile) {
+		this.sfile = sfile;
+	}
+	public Date getPostdate() {
 		return postdate;
 	}
-	public void setPostdate(java.sql.Date postdate) {
+	public void setPostdate(Date postdate) {
 		this.postdate = postdate;
 	}
-	public String getVisitcount() {
+	public int getVisitcount() {
 		return visitcount;
 	}
-	public void setVisitcount(String visitcount) {
+	public void setVisitcount(int visitcount) {
 		this.visitcount = visitcount;
+	}
+	public int getDownloadcount() {
+		return downloadcount;
+	}
+	public void setDownloadcount(int downloadcount) {
+		this.downloadcount = downloadcount;
 	}
 	public String getName() {
 		return name;

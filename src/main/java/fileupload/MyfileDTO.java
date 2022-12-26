@@ -4,11 +4,14 @@ public class MyfileDTO {
 	
 	private String idx;
 	private String name;
-	private String title;  // 제목
-	private String cate;   // 카테고리
-	private String ofile;  // 원본 파일명
-	private String sfile;  // 저장된 파일명
+	private String title;
+	private String cate;
+	private String content;
+	private String ofile;
+	private String sfile;
 	private String postdate;
+	private int visitcount;
+	private int downloadcount;
 	
 	public String getIdx() {
 		return idx;

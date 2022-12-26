@@ -123,7 +123,7 @@
 		        <li class="nav-item">
 		        	<a class="nav-link" href="#" style="color:rgb(85, 85, 85); font-size:20px;">열린공간</a>
 		        	<ul class="submenu">
-		        		<li><a href="#">공지사항</a></li>
+		        		<li><a href="../Pages/ListG.jsp">공지사항</a></li>
 		        		<li><a href="#">자주하는질문</a></li>
 		        		<li><a href="#">도서관에바란다</a></li>
 		        		<li><a href="#">발간자료</a></li>

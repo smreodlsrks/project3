@@ -22,7 +22,7 @@ if(searchWord != null){
 	param.put("searchWord", searchWord);
 }
 //Map컬렉션을 인수로 게시물의 갯수를 카운트한다.
-int totalCount = dao.selectCount(param);
+int totalCount = dao.selectCountF(param);
 
 /******* 페이지 처리 start *******/
 //web.xml에 설정한 컨텍스트 초기화 파라미터를 읽어와서
@@ -77,7 +77,7 @@ param.put("end", end);
 
 
 //목록에 출력할 게시물을 추출하여 반환 받는다.
-List<BoardDTO> boardLists = dao.selectListPage(param);
+List<BoardDTO> boardLists = dao.selectListPageF(param);
 //자원해제
 dao.close();
 %>
@@ -137,7 +137,6 @@ else {
     {
     	//현재 출력할 게시물의 갯수에 따라 출력번호는 달라지므로
     	//totalCount를 사용하여 가상번호를 부여한다.
-    	//virtualNum = totalCount--;
     	
     	//현재 페이지 번호를 적용한 가상번호 계산하기
     	//전체게시물수 - (((현재페이지-1)*한페이지출력갯수)+countNum증가치)
