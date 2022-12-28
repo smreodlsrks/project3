@@ -99,15 +99,15 @@ public class BoardDAO extends JDBConnect {
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				dto.setNum(rs.getString(1));
-				dto.setTitle(rs.getString(2));
+				dto.setTitle(rs.getString(2)); 
 				dto.setContent(rs.getString(3));
 				dto.setId(rs.getString(4));
 				dto.setCategory(rs.getString(5));
 				dto.setOfile(rs.getString(6));
 				dto.setSfile(rs.getString(7));
 				dto.setPostdate(rs.getDate(8));
-				dto.setVisitcount(rs.getInt(9));
-				dto.setDownloadcount(rs.getInt(10));
+				dto.setVisitcount(rs.getString(9));
+				dto.setDownloadcount(rs.getString(10));
 				dto.setName(rs.getString("name"));
 			}
 		}
@@ -118,14 +118,14 @@ public class BoardDAO extends JDBConnect {
 		return dto;
 	}
 
-	public void updateVisitCount(int num) {
+	public void updateVisitCount(String num) {
 		String query = "UPDATE board SET "
 					+ " visitcount = visitcount + 1 "
 					+ "WHERE num = ?";
 		
 		try {
 			psmt = con.prepareStatement(query);
-			psmt.setInt(1, num);
+			psmt.setString(1, num);
 			psmt.executeQuery();
 		}
 		catch(Exception e) {
@@ -192,12 +192,16 @@ public class BoardDAO extends JDBConnect {
 			rs = psmt.executeQuery();
 			while(rs.next()) {
 				BoardDTO dto = new BoardDTO();
-				dto.setNum(rs.getString("num"));
-				dto.setTitle(rs.getString("title"));
-				dto.setContent(rs.getString("content"));
-				dto.setPostdate(rs.getDate("postdate"));
-				dto.setId(rs.getString("id"));
-				dto.setVisitcount(rs.getInt("visitcount"));
+				dto.setNum(rs.getString(1));
+				dto.setTitle(rs.getString(2));
+				dto.setContent(rs.getString(3));
+				dto.setId(rs.getString(4));
+				dto.setCategory(rs.getString(5));
+				dto.setOfile(rs.getString(6));
+				dto.setSfile(rs.getString(7));
+				dto.setPostdate(rs.getDate(8));
+				dto.setVisitcount(rs.getString(9));
+				dto.setDownloadcount(rs.getString(10));
 				
 				bbs.add(dto);
 			}
@@ -226,12 +230,16 @@ public class BoardDAO extends JDBConnect {
 			rs = psmt.executeQuery();
 			while(rs.next()) {
 				BoardDTO dto = new BoardDTO();
-				dto.setNum(rs.getString("num"));
-				dto.setTitle(rs.getString("title"));
-				dto.setContent(rs.getString("content"));
-				dto.setPostdate(rs.getDate("postdate"));
-				dto.setId(rs.getString("id"));
-				dto.setVisitcount(rs.getInt("visitcount"));
+				dto.setNum(rs.getString(1));
+				dto.setTitle(rs.getString(2));
+				dto.setContent(rs.getString(3));
+				dto.setId(rs.getString(4));
+				dto.setCategory(rs.getString(5));
+				dto.setOfile(rs.getString(6));
+				dto.setSfile(rs.getString(7));
+				dto.setPostdate(rs.getDate(8));
+				dto.setVisitcount(rs.getString(9));
+				dto.setDownloadcount(rs.getString(10));
 				
 				bbs.add(dto);
 			}

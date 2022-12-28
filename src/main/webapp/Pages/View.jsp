@@ -1,3 +1,8 @@
+<%@page import="model1.board.DatglDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
+<%@page import="model1.board.DatglDAO"%>
 <%@page import="model1.board.BoardDTO"%>
 <%@page import="model1.board.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -18,7 +23,7 @@ if (cookies != null) {
     }
 }
 if(ckIsAlive == false){
-	dao.updateVisitCount(Integer.parseInt(num));
+	dao.updateVisitCount(num);
 	Cookie cookie = new Cookie(session.getAttribute("UserId")+num, "visited");
 	response.addCookie(cookie);
 } 
@@ -32,10 +37,10 @@ dao.close();
 <script>
 function deletePost() {
     var confirmed = confirm("정말로 삭제하겠습니까?"); 
-    if (confirmed) {
+        if (confirmed) {
         var form = document.writeFrm;      
         form.method = "post"; 
-        form.action = "DeleteProcess.jsp";
+        form.action = "DeleteProcess.jsp?category=<%= dto.getCategory() %>";        
         form.submit();
     }
 }
@@ -80,15 +85,73 @@ function deletePost() {
                     수정하기</button>
                 <button type="button" onclick="deletePost();">삭제하기</button>                 
 	            <%
-	            }}
+	            	}
+	            }
+            	if(dto.getCategory().equals("gongji")){
 	            %>
-                <button type="button" onclick="location.href='List.jsp';">
+                <button type="button" onclick="location.href='ListG.jsp';">
                     목록 보기
                 </button>
+                <%
+            	} else if(dto.getCategory().equals("free")){
+                %>
+                <button type="button" onclick="location.href='ListF.jsp';">
+                    목록 보기
+                </button>
+                <%
+                }
+                %>
             </td>
         </tr>
     </table>
 </form>
+
+<br /><br />
+
+<form action="DatglProcess.jsp">
+	<input type="hidden" name="num" value="<%= num %>" />
+	<table style="align:center; text-align:center; width:800px;">
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="id" /></td>
+		</tr>
+		<tr>
+			<td>내용</td>
+			<td>
+				<textarea name="content" cols="30" rows="10"></textarea>
+			</td>
+		</tr>
+		<tr><td><input type="submit" /></td></tr>
+	</table>
+</form>
+
+<br /><br />
+
+<%
+DatglDAO daoo = new DatglDAO(application);
+Map<String, Object> param = new HashMap<String, Object>();
+List<DatglDTO> datglLists = daoo.selectListPage(param);
+daoo.close();
+
+if (datglLists.isEmpty()) {}
+else {
+	for (DatglDTO dtoo : datglLists) {
+    	if(dtoo.getNumm().equals(num)){
+%>
+<table style="align:center; text-align:center; width:800px; border:1px solid grey;">
+	<tr>
+		<td width="30%"><%= dtoo.getIdm() %></td>
+		<td width="70%"><%= dtoo.getPostdatem() %></td>
+	</tr>
+	<tr>
+		<td colspan="2"><%= dtoo.getContentm().replace("\r\n", "<br/>") %></td>
+	</tr>
+</table>
+<%
+    	}
+	}
+}
+%>
 <jsp:include page="../Main/Bottom.jsp" />
 </body>
 </html>

@@ -28,6 +28,31 @@ public class JSFunction {
 		catch(Exception e) {}
 	}
 	
+	public static void justAlert(String msg, JspWriter out) {
+		try {
+			String script = "<script>"
+					  	  + "	alert('" + msg + "');"
+					  	  + "</script>";
+			out.println(script);
+		}
+		catch(Exception e) {}
+	}
+	
+	public static void alertLogin(String msg, JspWriter out) {
+		try {
+			String script = "<script>"
+					  	  + "	alert('" + msg + "');"
+					  	  + "	open('../Session/LoginForm.jsp', "
+					  	  + "	'login', "
+					  	  + "	'width=990, height=750, left=100, top=100, "
+					  	  + "	location=no, toolbar=no, menubar=no, "
+					  	  + "	scrollbars=yes, resize=no');"
+					  	  + "</script>";
+			out.println(script);
+		}
+		catch(Exception e) {}
+	}
+	
 	public static void cookiePage(JspWriter out) {
         try {
             String script = "<script>"

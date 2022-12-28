@@ -15,9 +15,6 @@
 </style>
 </head>
 <body>
-	<!-- <hr style="margin-bottom:-14px;" />
-	<hr style="margin-bottom:-14px;" />
-	<hr style="margin-bottom:-14px;" /> -->
 	<hr style="border-width:3px; color:rgb(10, 10, 10);"/>
 	
 	
@@ -45,15 +42,15 @@
 		    <option value="https://e-lib.sen.go.kr/index.php">전자도서관</option>
 		    <option value="http://lib.sen.go.kr/books/index.do">사서추천도서포털</option>
 		    <option value="https://everlearning.sen.go.kr/index.do">평생학습포털(에버러닝)</option>
-		    <option value="http://gnlib.sen.go.kr" label="강남도서관" title="강남도서관"></option>
-		    <option value="http://gdlib.sen.go.kr" label="강동도서관" title="강동도서관"></option>
-		    <option value="http://gslib.sen.go.kr" label="강서도서관" title="강서도서관"></option>
-		    <option value="http://gplib.sen.go.kr" label="개포도서관" title="개포도서관"></option>
-		    <option value="http://gclib.sen.go.kr" label="고척도서관" title="고척도서관"></option>
-		    <option value="http://grlib.sen.go.kr" label="구로도서관" title="구로도서관"></option>
-		    <option value="http://nslib.sen.go.kr" label="남산도서관" title="남산도서관"></option>
-		    <option value="http://nslib.sen.go.kr" label="남산도서관" title="남산도서관"></option>
-		    <option value="http://dblib.sen.go.kr" label="도봉도서관" title="도봉도서관"></option>
+		    <option value="http://gnlib.sen.go.kr">강남도서관</option>
+		    <option value="http://gdlib.sen.go.kr">강동도서관</option>
+		    <option value="http://gslib.sen.go.kr">강서도서관</option>
+		    <option value="http://gplib.sen.go.kr">개포도서관</option>
+		    <option value="http://gclib.sen.go.kr">고척도서관</option>
+		    <option value="http://grlib.sen.go.kr">구로도서관</option>
+		    <option value="http://nslib.sen.go.kr">남산도서관</option>
+		    <option value="http://nslib.sen.go.kr">남산도서관</option>
+		    <option value="http://dblib.sen.go.kr">도봉도서관</option>
 		</select>
 	</div>
 	<hr style="clear:both" />

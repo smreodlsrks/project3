@@ -2,7 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-session.invalidate();
-String url = request.getParameter("redirectUrl");
-response.sendRedirect(url);
+if(session.getAttribute("UserId")==null){
+	JSFunction.alertLogin("로그인 후 이용해주십시오.", out);
+	return;
+}
 %>

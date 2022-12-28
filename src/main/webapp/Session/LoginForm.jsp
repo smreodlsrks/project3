@@ -38,7 +38,7 @@
 	<div>
 		<h2 style="margin-left:330px;">아이디 로그인</h2>
 		<form action="LoginProcess.jsp" method="post" name="loginfrm" onsubmit="return validateForm(this)" style="margin-left:150px;">
-			<input type="checkbox" name="cookie_id" style="margin-left:62px; margin-bottom:7px;" />아이디 저장<br />
+			<label style="cursor:pointer;"><input type="checkbox" name="cookie_id" style="margin-left:62px; margin-bottom:7px;" />아이디 저장</label><br />
 			<input type="text" id="cook" class="form-control pd-3" name="user_id" placeholder="아이디" style="padding:10px; width:406px; position:relative; left:50px; margin:10px;" /><br />
 			<input type="password" class="form-control pd-3" name="user_pw" placeholder="비밀번호" style="padding:10px; width:406px; position:relative; left:50px; margin:10px;" /><br />
 			<div style="height:20px; margin-top:8px; margin-left:62px; color:red; font-size:12px;">

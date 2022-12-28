@@ -9,6 +9,7 @@
 	function js(){		
 	    alert("ㅈㅅㅈㅅ 준비중임미두");
 	}
+	
 	function login(){		
 	    open("../Session/LoginForm.jsp",
 	     "login",
@@ -16,13 +17,14 @@
 	     + "location=no, toolbar=no, menubar=no,"
 	     + "scrollbars=yes, resize=no");
 	}
+	
 	function SignUp(){		
 	    open("../Session/SignUp1.jsp",
 	    	"SignUp",
 	    	"width=990, height=750, left=100, top=100, "
 	    	+ "location=no, toolbar=no, menubar=no,"
 	    	+ "scrollbars=yes, resize=no");
-	}
+	}	
 </script>
 <style>
 	li { list-style:none; }
@@ -63,10 +65,16 @@
 		<li class="nav-item">
        	    <span style="font-weight:bold;" class="nav-link text-light"><%= session.getAttribute("UserName") %>님 환영합니다.</span>
         </li>
-		<li class="nav-item">
-        	<a class="nav-link text-light" href="../Session/Logout.jsp">로그아웃</a>
-        </li>
+        	<% if(request.getQueryString() == null){ %>
+			<li class="nav-item">
+				<a class="nav-link text-light" href="../Session/Logout.jsp?redirectUrl=<%= request.getRequestURL() %>" >로그아웃</a>
+	        </li>
+	        <%} else { %>
+	        <li class="nav-item">
+				<a class="nav-link text-light" href="../Session/Logout.jsp?&redirectUrl=<%= request.getRequestURL() %>?<%= request.getQueryString() %>" >로그아웃</a>
+	        </li>
 		<%
+			}
 		}
 		%>
         <li class="nav-item">
@@ -89,7 +97,7 @@
 </nav>
 <nav class="navbar navbar-expand-sm bg-light navbar-dark">
 	<div class="container">
-    	<a class="navbar-brand" href="./main.jsp">
+    	<a class="navbar-brand" href="/Project2/Main/main.jsp">
         	<img src="https://splib.sen.go.kr/resources/homepage/splib/img/splib_logo.png" style="width:130px;"> 
 	    </a>
     	<div class="collapse navbar-collapse" id="collapsibleNavbar">

@@ -2,7 +2,6 @@ package utils;
 
 public class BoardPage {
 	
-	/* List.jsp */
 	public static String pagingStr(int totalCount, int pageSize,
 			int blockPage, int pageNum, String reqUrl) {
 		//페이지 바로가기 링크를 저장할 문자열 변수 생성

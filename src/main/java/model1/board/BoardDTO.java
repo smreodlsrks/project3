@@ -6,13 +6,13 @@ public class BoardDTO {
 	private String num; 
 	private String title;
 	private String content;
-	private String id;
+	private String id; 
 	private String category;
 	private String ofile;
-	private String sfile;
+	private String sfile; 
 	private Date postdate; 
-	private int visitcount;
-	private int downloadcount;
+	private String visitcount;
+	private String downloadcount;
 	//member테이블과의 join을 통해 회원 이름을 출력해야
 	//할 때를 위해 멤버변수 name을 추가한다.
 	private String name;
@@ -65,16 +65,16 @@ public class BoardDTO {
 	public void setPostdate(Date postdate) {
 		this.postdate = postdate;
 	}
-	public int getVisitcount() {
+	public String getVisitcount() {
 		return visitcount;
 	}
-	public void setVisitcount(int visitcount) {
+	public void setVisitcount(String visitcount) {
 		this.visitcount = visitcount;
 	}
-	public int getDownloadcount() {
+	public String getDownloadcount() {
 		return downloadcount;
 	}
-	public void setDownloadcount(int downloadcount) {
+	public void setDownloadcount(String downloadcount) {
 		this.downloadcount = downloadcount;
 	}
 	public String getName() {

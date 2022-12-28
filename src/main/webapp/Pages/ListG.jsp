@@ -37,20 +37,8 @@ if(session.getAttribute("pageSizeN") != null){
 int blockPage =
 	Integer.parseInt(application.getInitParameter("PAGES_PER_BLOCK"));
 
-/*
-Math.ceil(전체 게시물 갯수 / 페이지당 출력할 게시물 갯수) => 결과값의 올림처리
-가령 게시물의 갯수가 51개라면 나눴을때의 결과가 5.1이 된다.
-이때 무조건 올림처리하여 6페이지가 나오게 된다.
-만약 totalCount를 double로 형변환 하지 않으면 소수점 값이 나오지 않아
-올림처리가 되지 않으므로 주의해야한다.
-*/
 int totalPage = (int)Math.ceil((double)totalCount / pageSize);
 
-/*
-목록에 처음 진입했을때는 페이지 관련 파라미터가 없는 상태이므로 무조건
-1page로 지정한다. 만약 파라미터 pageNum이 있다면 request내장객체를 통해
-받아온 후 페이지 번호로 지정한다.
-*/
 int pageNum = 1;
 String pageTemp = request.getParameter("pageNum");
 if(pageTemp != null && !pageTemp.equals(""))
@@ -139,7 +127,6 @@ dao.close();
 		    </div>
 		    <table border="1" width="90%">
 		        <tr align="center">
-		        	<% System.out.println("현재경로 = "+ request.getRequestURI()); %> 
 		            <td>
 			            <form>
 						    <select name="searchField"> 
@@ -150,7 +137,7 @@ dao.close();
 						    <input type="text" name="searchWord" />
 						    <input type="submit" value="검색하기" />
 					    </form>
-			            <button type="button" onclick="location.href='Write.jsp';">글쓰기
+			            <button type="button" onclick="location.href='Write.jsp?redirectUrl=<%= request.getRequestURL() %>'">글쓰기
 		                </button>
 		            </td>
 		        </tr>

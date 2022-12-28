@@ -10,7 +10,7 @@ public class MembershipDAO extends JDBConnect {
 	public MembershipDAO(ServletContext application) {
 		super(application);
 	}
-	
+	 
 	public MembershipDTO getMembershipDTO(String uid, String upass) {
 		MembershipDTO dto = new MembershipDTO();
 		String query = "SELECT * FROM membership WHERE id=? AND password=?";

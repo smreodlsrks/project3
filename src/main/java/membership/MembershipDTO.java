@@ -5,7 +5,7 @@ import java.util.Date;
 public class MembershipDTO {
 	
 	private String id;
-	private String password;
+	private String password; 
 	private String name;
 	private String sex;
 	private String birth1;
